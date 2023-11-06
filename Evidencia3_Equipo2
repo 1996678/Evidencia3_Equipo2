@@ -984,8 +984,19 @@ try:
                     print("Opción no válida.")
                     
         elif opcion_menu == 4:
-            break
-            
+            try:
+                salida_menu=input('Desea salir de la solución: SI/NO: ').strip().upper()
+                if salida_menu=='SI':
+                    break
+                if salida_menu=='NO':
+                    continue
+                else:
+                    print('Opción inválida. INTENTE DE NUEVO')
+                    continue
+                
+            except Exception:
+                print(f"Se produjo el siguiente error: {sys.exc_info()[0]}")
+                
         else:
             print("Opción no válida.")
             
